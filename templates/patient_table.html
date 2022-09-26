@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Patient Table </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}"> 
+</head>
+
+<body>
+
+    <div>
+
+            <h1> Patient Table </h1>
+            <table class="table table-dark table-striped">
+                <tr>  
+                    <th> MRN </th>
+                    <th> First Name </th>
+                    <th> Last Name </th>
+                    <th> DOB </th>
+                    <th> Street Address </th>
+                    <th> Zip Code </th>
+                    <th> Contact Information </th>
+                </tr>
+                {% for patient in listPatients %}
+                    <tr>
+                        <td> {{ patient.MRN }} </td>
+                        <td> {{ patient.firstName }} </td>
+                        <td> {{ patient.lastName }} </td>
+                        <td> {{ patient.DOB }} </td>
+                        <td> {{ patient.streetaddress }} </td>
+                        <td> {{patient.zipcode }} </td>
+                        <td> {{patient.contactinformation }} </td>
+                    </tr>
+                {% endfor %}
+            </table>
+    </div>
+
+
+</body>
+</html>
